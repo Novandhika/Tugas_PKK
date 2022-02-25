@@ -86,7 +86,7 @@ module Coba_PROS(
     mux2_32  PC_IMM_1 //+1 or IMM
     (
         .a(32'd1),
-        .b(imm_in),
+        .b({{20{ins[32]}}, ins[7], ins[30:25], ins[11:8], 1'd0}),//imm_in),
         .mux2_ctr(imm),
         .out(out_imm)
     );
